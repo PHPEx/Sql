@@ -15,7 +15,7 @@ class Update extends AbstractSql
      * @param Array $fields Campos
      * @param Array $values Valores
      * @param String $index Indice de mudanca
-     * @return Db_Sql_Update 
+     * @return Sql\Update 
      */
     protected function _setData( $fields, $values, $index = null )
     {
