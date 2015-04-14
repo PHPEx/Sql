@@ -41,5 +41,10 @@ final class Select extends AbstractSQL {
         $this->_sql .= "'";
         return $this;
     }
+    
+    public function between($min, $max){
+        $this->_sql .= "BETWEEN '{$min}' AND '{$max}'";
+        return $this;
+    }
 
 }
