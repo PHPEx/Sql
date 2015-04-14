@@ -3,6 +3,7 @@
 namespace Sql;
 
 use Sql\Condition\OperatorInterface;
+use Sql\Order\OrderInterface;
 
 final class Select extends AbstractSQL {
 
@@ -67,6 +68,11 @@ final class Select extends AbstractSQL {
         if($max){
             $this->_sql .= ', '.$this->_setFilter($max);
         }
+        return $this;
+    }
+    
+    public function addOrder(OrderInterface $order){
+        $this->_sql .= $order->getOrder();
         return $this;
     }
 
