@@ -46,5 +46,10 @@ final class Select extends AbstractSQL {
         $this->_sql .= "BETWEEN '{$min}' AND '{$max}'";
         return $this;
     }
+    
+    public function in(array $data){
+        $this->_sql .= ' IN ('.  implode(',',array_map(array($this,'_setFilter'), $data)).')';
+        return $this;
+    }
 
 }
