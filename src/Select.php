@@ -56,5 +56,10 @@ final class Select extends AbstractSQL {
         $this->_sql .= " < {$this->_setFilter($data)}";
         return $this;
     }
+    
+    public function biggerThan($data){
+        $this->_sql .= " > {$this->_setFilter($data)}";
+        return $this;
+    }
 
 }
