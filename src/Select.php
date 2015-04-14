@@ -61,5 +61,13 @@ final class Select extends AbstractSQL {
         $this->_sql .= " > {$this->_setFilter($data)}";
         return $this;
     }
+    
+    public function limit($min,$max = null){
+        $this->_sql .= ' LIMIT '.$this->_setFilter($min);
+        if($max){
+            $this->_sql .= ', '.$this->_setFilter($max);
+        }
+        return $this;
+    }
 
 }
