@@ -24,19 +24,21 @@ final class Select extends AbstractSQL {
         return $this;
     }
 
-    public function addCondition(OperatorInterface $operator){
-        $this->_sql .= " {$operator->getCondition()} "; 
+    public function addCondition(OperatorInterface $operator) {
+        $this->_sql .= " {$operator->getCondition()} ";
         return $this;
     }
-    
-    public function like($term, $first = false, $last = false){
-        if($first){
+
+    public function like($term, $first = false, $last = false) {
+        $this->_sql .= " LIKE '";
+        if ($first) {
             $this->_sql .= '%';
         }
-        $this->_sql .= $term;        
-        if($last){
+        $this->_sql .= $term;
+        if ($last) {
             $this->_sql .= '%';
         }
+        $this->_sql .= "'";
         return $this;
     }
 
