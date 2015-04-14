@@ -2,7 +2,7 @@
 
 namespace Sql;
 
-class Update extends AbstractSql
+final class Update extends AbstractSql
 {
      /**
      * Combina os sets do update

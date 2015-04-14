@@ -2,7 +2,7 @@
 
 namespace Sql;
 
-class Delete extends AbstractSql
+final class Delete extends AbstractSql
 {
     /**
      * Obtem os dados para a geracao da SQL.
