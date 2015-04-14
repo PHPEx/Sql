@@ -1,0 +1,15 @@
+{
+    "name": "phpex/sql",
+    "authors": [
+        {
+            "name": "IgorDePaula",
+            "email": "igordepaula@adminweb.com.br"
+        }
+    ],
+    "autoload":{
+      "psr-4":{
+          "Sql\\":"src/"
+      }  
+    },
+    "require": {}
+}
