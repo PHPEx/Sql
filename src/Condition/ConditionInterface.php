@@ -2,7 +2,7 @@
 
 namespace Sql\Condition;
 
-interface OperatorInterface {
+interface ConditionInterface {
     
     public function getCondition();
     

@@ -2,7 +2,7 @@
 
 namespace Sql;
 
-use Sql\Condition\OperatorInterface;
+use Sql\Condition\ConditionInterface;
 use Sql\Order\OrderInterface;
 
 final class Select extends AbstractSQL {
@@ -25,7 +25,7 @@ final class Select extends AbstractSQL {
         return $this;
     }
 
-    public function addCondition(OperatorInterface $operator) {
+    public function addCondition(ConditionInterface $operator) {
         $this->_sql .= " {$operator->getCondition()} ";
         return $this;
     }
