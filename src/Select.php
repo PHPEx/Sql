@@ -51,5 +51,10 @@ final class Select extends AbstractSQL {
         $this->_sql .= ' IN ('.  implode(',',array_map(array($this,'_setFilter'), $data)).')';
         return $this;
     }
+    
+    public function lessThan($data){
+        $this->_sql .= " < {$this->_setFilter($data)}";
+        return $this;
+    }
 
 }
