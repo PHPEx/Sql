@@ -3,8 +3,6 @@
 namespace Sql\Select\Parameters;
 
 use Sql\Select\Parameters\ParametersInterface;
-use Sql\Select\Parameters\Field;
-use Sql\Select\Parameters\Value;
 
 class Like implements ParametersInterface{
     
