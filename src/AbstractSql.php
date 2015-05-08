@@ -44,10 +44,10 @@ abstract class AbstractSql implements SqlInterface{
      * @param String $table 
      * @param Array campos da tabela.
      */
-    public function setTable(array $table, array $fields = array('*') )
+    public function setTable($table, array $fields = array('*') )
     {
-        $this -> _table = implode(',',$table);
-        $this -> _fieldsTable = implode(',',$fields);
+        $this -> _table = is_array($table) ? implode(', ',$table) : $table;
+        $this -> _fieldsTable = implode(', ',$fields);
         return $this;
     }
 
