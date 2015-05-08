@@ -25,8 +25,6 @@ class Like implements ParametersInterface{
             $sql .= "%";
         }
         $sql .="'";
-        return $sql;
-        
+        return $sql;        
     }
-
 }
