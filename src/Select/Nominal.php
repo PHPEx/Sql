@@ -1,11 +1,12 @@
 <?php
 
-namespace Sql;
+namespace Sql\Select;
 
 use Sql\Condition\ConditionInterface;
 use Sql\Order\OrderInterface;
+use Sql\AbstractSql;
 
-final class Select extends AbstractSQL {
+final class Nominal extends AbstractSQL {
 
     protected function _setData($fields, $values, $index = null) {
         
