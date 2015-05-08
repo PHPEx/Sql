@@ -4,6 +4,7 @@ php:
 before_script:
     - composer self-update
     - composer dumpautoload
+    - ls -a
 
 script:
     - phpunit tests/SqlTest/
