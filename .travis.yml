@@ -4,7 +4,7 @@ php:
 before_script:
     - composer self-update
     - composer dumpautoload
-    - ls -a
+    - ls vendor
 
 script:
     - phpunit tests/SqlTest/
