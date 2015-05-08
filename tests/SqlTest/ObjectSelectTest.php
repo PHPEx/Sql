@@ -1,6 +1,6 @@
 <?php
 namespace SqlTest;
-require '../../vendor/autoload.php';
+require './../../vendor/autoload.php';
 use Sql\Select\Object as Select;
 
 class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
