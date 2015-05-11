@@ -13,7 +13,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
     
     public function testNoParams(){
        $sel = new Select();
-       $sel->setTable('users');
+       $sel->setTable('users')->where();
        $this->assertEquals('SELECT * FROM users',$sel->getQuery());
     }
     
