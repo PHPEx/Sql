@@ -22,7 +22,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
     public function testEqualsParams(){
        $sel = new Select();
        $sel->setTable('users')->where(new Equals(new Field('id'),new Value(10)));
-       $this->assertEquals("SELECT * FROM users WHERE (id='10')",$sel->getQuery());
+       $this->assertEquals("SELECT * FROM users WHERE (id = '10')",$sel->getQuery());
     }
     
     public function tearDown(){
