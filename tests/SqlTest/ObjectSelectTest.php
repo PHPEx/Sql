@@ -1,7 +1,7 @@
 <?php
 namespace SqlTest;
 
-use Sql\Select\Object as Select;
+use Sql\Select\ObjectSelect as Select;
 
 class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
    
