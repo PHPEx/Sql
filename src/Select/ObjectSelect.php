@@ -5,7 +5,7 @@ namespace Sql\Select;
 use Sql\Select\Parameters\ParametersInterface; 
 use Sql\AbstractSql;
 
-final class Object extends AbstractSQL implements ParametersInterface{
+final class ObjectSelect extends AbstractSQL implements ParametersInterface{
 
     protected function _setData($fields, $values, $index = null) {
         
@@ -15,7 +15,7 @@ final class Object extends AbstractSQL implements ParametersInterface{
         if ($this->getQuery() == null) {
             $this->_sql = "SELECT {$this->_fieldsTable} FROM {$this->_getTable()} WHERE ({$parameters->interpret()})";
         } else {
-            $this->_sql .= $field;
+            $this->_sql .= "({$parameters->interpret()})";
         }
         return $this;
     }

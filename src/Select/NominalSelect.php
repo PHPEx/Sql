@@ -6,7 +6,7 @@ use Sql\Condition\ConditionInterface;
 use Sql\Order\OrderInterface;
 use Sql\AbstractSql;
 
-final class Nominal extends AbstractSQL {
+final class NominalSelect extends AbstractSQL {
 
     protected function _setData($fields, $values, $index = null) {
         
