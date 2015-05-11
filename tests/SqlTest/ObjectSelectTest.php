@@ -6,6 +6,7 @@ use Sql\Select\Parameters\Field;
 use Sql\Select\Parameters\Equals;
 use Sql\Select\Parameters\Value;
 use Sql\Select\Parameters\In;
+use Sql\Select\Parameters\LesserThan;
 use Sql\Select\Parameters\Condition\AndCondition;
 use Sql\Select\Parameters\Condition\OrCondition;
 
@@ -67,6 +68,15 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
                );
        
        $this->assertEquals("SELECT * FROM users WHERE ( id IN (1,2,3))",$sel->getQuery());
+    }
+    public function tesLesserThanInParams(){
+        
+       $sel = new Select();
+       $sel->setTable('users')->where(
+             new LesserThan(new Field('id'),new Value(10) )
+               );
+       
+       $this->assertEquals("SELECT * FROM users WHERE ( id < 10)",$sel->getQuery());
     }
     
     public function tearDown(){
