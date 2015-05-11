@@ -7,6 +7,7 @@ use Sql\Select\Parameters\Equals;
 use Sql\Select\Parameters\Value;
 use Sql\Select\Parameters\In;
 use Sql\Select\Parameters\GreaterThan;
+use Sql\Select\Parameters\GreaterEquals;
 use Sql\Select\Parameters\LesserThan;
 use Sql\Select\Parameters\LesserEquals;
 use Sql\Select\Parameters\Condition\AndCondition;
@@ -99,6 +100,15 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
                );
        
        $this->assertEquals("SELECT * FROM users WHERE ( id > 10)",$sel->getQuery());
+    }
+    public function testGreaterEqualsParams(){
+        
+       $sel = new Select();
+       $sel->setTable('users')->where(
+             new GreaterEquals(new Field('id'),new Value(10) )
+               );
+       
+       $this->assertEquals("SELECT * FROM users WHERE ( id >= 10)",$sel->getQuery());
     }
     
     public function tearDown(){
