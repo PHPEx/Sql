@@ -66,7 +66,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
              new In(new Field('id'), array(1,2,3))
                );
        
-       $this->assertEquals("SELECT * FROM users WHERE id IN ('1','2','3')",$sel->getQuery());
+       $this->assertEquals("SELECT * FROM users WHERE id IN (1,2,3)",$sel->getQuery());
     }
     
     public function tearDown(){
