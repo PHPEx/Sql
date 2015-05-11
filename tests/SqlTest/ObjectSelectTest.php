@@ -8,14 +8,16 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
     private $object;
     public function setUp()
     {
-        $this->object = new Select();
+     
     }
     
-    public function testTrue(){
-        $this->assertTrue(true);
+    public function testNoParams(){
+       $sel = new Select();
+       $sel->setTable('users');
+       $this->assertEquals('SELECT * FROM users',$sel->getQuery());
     }
     
     public function tearDown(){
-        $this->object = null;
+      
     }
 }
