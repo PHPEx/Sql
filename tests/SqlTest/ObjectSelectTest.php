@@ -50,6 +50,25 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
        $this->assertEquals("SELECT * FROM users WHERE (username = 'borodin' AND password = 'pass')",$sel->getQuery());
     }
     
+    public function test4AndConditionAndEqualsParams(){
+        
+       $sel = new Select();
+       $sel->setTable('users')->where(
+              new AndCondition(
+                       new AndCondition(
+                       new Equals(new Field('username'),new Value('borodin')),
+                       new Equals(new Field('password'),new Value('pass'))
+                       ),
+                       new AndCondition(
+                       new Equals(new Field('username'),new Value('borodin')),
+                       new Equals(new Field('password'),new Value('pass'))
+                       )
+                      )
+               );
+       
+       $this->assertEquals("SELECT * FROM users WHERE (username = 'borodin' AND password = 'pass')",$sel->getQuery());
+    }
+    
     public function testOrConditionAndEqualsParams(){
         
        $sel = new Select();
