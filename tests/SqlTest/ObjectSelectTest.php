@@ -66,7 +66,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
                       )
                );
        
-       $this->assertEquals("SELECT * FROM users WHERE (username = 'borodin' AND password = 'pass')",$sel->getQuery());
+       $this->assertEquals("SELECT * FROM users WHERE (username = 'borodin' AND password = 'pass' AND username = 'borodin' AND password = 'pass')",$sel->getQuery());
     }
     
     public function testOrConditionAndEqualsParams(){
