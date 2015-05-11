@@ -13,7 +13,7 @@ final class ObjectSelect extends AbstractSQL implements ParametersInterface{
 
     public function where(ParametersInterface $parameters = null) {
         if ($this->getQuery() == null) {
-            $this->_sql = "SELECT {$this->_fieldsTable} FROM {$this->_getTable()} ";
+            $this->_sql = "SELECT {$this->_fieldsTable} FROM {$this->_getTable()}";
         } else {
             $this->_sql .= " WHERE ({$parameters->interpret()})";
         }
