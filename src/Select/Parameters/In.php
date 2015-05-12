@@ -14,7 +14,7 @@ class In implements ParametersInterface{
     }
 
     public function interpret() {        
-        $sql = " {$this->field->interpret()} IN (".implode(',',  array_map(array($this,'_setFilter'), $this->in)).")";
+        $sql = "{$this->field->interpret()} IN (".implode(',',  array_map(array($this,'_setFilter'), $this->in)).")";
         return $sql;
     }
     

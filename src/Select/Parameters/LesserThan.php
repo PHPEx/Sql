@@ -14,7 +14,7 @@ class LesserThan implements ParametersInterface{
     }
 
     public function interpret() {        
-        $sql = " {$this->field->interpret()} < {$this->value->interpret()}";
+        $sql = "{$this->field->interpret()} < {$this->value->interpret()}";
         return $sql;
     }
 }

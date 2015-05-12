@@ -89,7 +89,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
              new In(new Field('id'), array(1,2,3))
                );
        
-       $this->assertEquals("SELECT * FROM users WHERE ( id IN (1,2,3))",$sel->getQuery());
+       $this->assertEquals("SELECT * FROM users WHERE (id IN (1,2,3))",$sel->getQuery());
     }
     public function testLesserThanParams(){
         
@@ -98,7 +98,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
              new LesserThan(new Field('id'),new Value(10) )
                );
        
-       $this->assertEquals("SELECT * FROM users WHERE ( id < 10)",$sel->getQuery());
+       $this->assertEquals("SELECT * FROM users WHERE (id < 10)",$sel->getQuery());
     }
     
     public function testLesserEqualsParams(){
@@ -108,7 +108,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
              new LesserEquals(new Field('id'),new Value(10) )
                );
        
-       $this->assertEquals("SELECT * FROM users WHERE ( id <= 10)",$sel->getQuery());
+       $this->assertEquals("SELECT * FROM users WHERE (id <= 10)",$sel->getQuery());
     }
     
     public function testGreaterThanParams(){
@@ -118,7 +118,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
              new GreaterThan(new Field('id'),new Value(10) )
                );
        
-       $this->assertEquals("SELECT * FROM users WHERE ( id > 10)",$sel->getQuery());
+       $this->assertEquals("SELECT * FROM users WHERE (id > 10)",$sel->getQuery());
     }
     public function testGreaterEqualsParams(){
         
@@ -127,7 +127,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
              new GreaterEquals(new Field('id'),new Value(10) )
                );
        
-       $this->assertEquals("SELECT * FROM users WHERE ( id >= 10)",$sel->getQuery());
+       $this->assertEquals("SELECT * FROM users WHERE (id >= 10)",$sel->getQuery());
     }
     
     public function tearDown(){
