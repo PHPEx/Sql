@@ -10,15 +10,17 @@ final class ObjectSelect extends AbstractSql implements ParametersInterface{
     protected function _setData($fields, $values, $index = null) {
         
     }
-
-    public function where(ParametersInterface $parameters = null) {
-        if ($this->getQuery() == null && $parameters == null) {
-            $this->_sql = "SELECT {$this->_fieldsTable} FROM {$this->_getTable()}";
-        } 
-        
-        if($this->getQuery() == null && $parameters != null){
-            $this->_sql .= "SELECT {$this->_fieldsTable} FROM {$this->_getTable()} WHERE ({$parameters->interpret()})";
+    
+    public function setTable($table, $fields = array()) {
+        parent::setTable($table, $fields);
+        if ($this->getQuery() == null) {
+             $this->_sql = "SELECT {$this->_fieldsTable} FROM {$this->_getTable()}";
         }
+        return $this;
+    }
+
+    public function where(ParametersInterface $parameters) {       
+        $this->_sql .= " WHERE ({$parameters->interpret()})";        
         return $this;
     }
 
