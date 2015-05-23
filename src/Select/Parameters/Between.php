@@ -2,12 +2,14 @@
 
 namespace Sql\Select\Parameters;
 
+use Sql\Select\Parameters\ParametersInterface;
+
 class Between implements ParametersInterface
 {
 
 	private $field, $min, $max;
 
-	public function __conctruct(Field $field, Value $min,Value $max){
+	public function __construct(Field $field, Value $min,Value $max){
 		$this->field = $field;
 		$this->min = $min;
 		$this->max = $max;
