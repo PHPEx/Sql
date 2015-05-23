@@ -35,7 +35,7 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
        $sel = new Select();
        $sel->setTable('users')->where(new Between(new Field('id'),new Value(1), new Value(3)));
        
-       $this->assertEquals('SELECT * FROM users WHERE id BETWEEN 1 AND 3',$sel->getQuery());
+       $this->assertEquals('SELECT * FROM users WHERE ( id BETWEEN 1 AND 3)',$sel->getQuery());
     }
     
     public function testEqualsParams(){
