@@ -12,6 +12,7 @@ use Sql\Select\Parameters\LesserThan;
 use Sql\Select\Parameters\LesserEquals;
 use Sql\Select\Parameters\Condition\AndCondition;
 use Sql\Select\Parameters\Condition\OrCondition;
+use Sql\Select\Parameters\Between;
 
 class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
    
@@ -27,6 +28,14 @@ class ObjectSelectTest extends \PHPUnit_Framework_TestCase {
        $sel->setTable('users');
        
        $this->assertEquals('SELECT * FROM users',$sel->getQuery());
+    }
+
+     public function testSelectBetween(){
+        
+       $sel = new Select();
+       $sel->setTable('users')->where(new Between(new Field('id'),new Value(1), new Value(3)));
+       
+       $this->assertEquals('SELECT * FROM users WHERE id BETWEEN 1 AND 3',$sel->getQuery());
     }
     
     public function testEqualsParams(){
