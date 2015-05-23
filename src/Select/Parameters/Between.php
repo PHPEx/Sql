@@ -8,7 +8,7 @@ class Between implements ParametersInterface
 	private $field, $min, $max;
 
 	public function __conctruct(Field $field, Value $min,Value $max){
-		$this->field = $fiel;
+		$this->field = $field;
 		$this->min = $min;
 		$this->max = $max;
 	}
